@@ -11,18 +11,20 @@ import (
 	"io"
 	"net"
 	"os"
+	"redis-shake/src/pkg/libs/atomic2"
+	"redis-shake/src/pkg/libs/errors"
+	"redis-shake/src/pkg/libs/log"
+	"redis-shake/src/pkg/libs/stats"
+	"redis-shake/src/pkg/rdb"
+	"redis-shake/src/pkg/redis"
+	conf "redis-shake/src/redis-shake/configure"
 	"strconv"
 	"strings"
 	"time"
 
-	"pkg/libs/atomic2"
-	"pkg/libs/errors"
-	"pkg/libs/log"
-	"pkg/libs/stats"
-	"pkg/rdb"
-	"pkg/redis"
+
 	redigo "github.com/garyburd/redigo/redis"
-	"redis-shake/configure"
+
 )
 
 func OpenRedisConn(target, auth_type, passwd string) redigo.Conn {
