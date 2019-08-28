@@ -8,7 +8,9 @@ import (
 
 	"github.com/nightlyone/lockfile"
 )
-
+	/*
+	123456
+	 */
 func WritePid(id string) (err error) {
 	var lock lockfile.Lockfile
 	lock, err = lockfile.New(id)
